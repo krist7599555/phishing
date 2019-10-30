@@ -15,9 +15,7 @@
       <br>
     </div>
     <div class='popup' :class='{active: !norm}'>
-      <div style='margin: auto'>
-        <img src="../assets/fools.png" alt="fools">
-      </div>
+        <Content/>
     </div>
   </div>
 </template>
@@ -27,13 +25,15 @@
 import Form from '@/components/Form.vue'
 import Head from '@/components/Head.vue'
 import Nav from '@/components/Nav.vue'
+import Content from '@/components/Content.vue'
 
 export default {
   name: 'home',
   components: {
     Nav,
     Form,
-    Head
+    Head,
+    Content
   },
   data() {
     return {
@@ -69,10 +69,13 @@ export default {
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   transform: translateY(-100vh);
   height: 100vh;
+  overflow: hidden;
+  overflow-y:scroll;
+  overflow-x:hidden;
   &.active {
     transform: translateY(0);
-
   }
+
 }
 
 </style>
